@@ -1,16 +1,80 @@
-# bookstore_app
+# BookShelf App 📚
 
-A new Flutter project.
+A Flutter-based mobile application that allows users to explore books, add books to their personal shelf, track reading progress, rate books, and manage a wishlist. The app integrates with Firebase for authentication and Firestore for data storage.
 
-## Getting Started
+## Features ✨
+- **Explore Books**: Browse books from an API and view details.
+- **Book Shelf**: Add books to a personal shelf and track progress.
+- **Wishlist**: Save books for future reading.
+- **Book Details**: View title, author, publisher, publish date, ISBN, price, and availability.
+- **User Authentication**: Sign in with Firebase Authentication.
+- **Cloud Storage**: Store and retrieve book data from Firebase Firestore.
 
-This project is a starting point for a Flutter application.
+## Screens 📱
+- **Home Page**: Displays books added to the shelf with options to delete.
+- **Explore Page**: Fetches books from an external API.
+- **Book Details Page**: Shows detailed information about a selected book.
+- **Wishlist Page**: Manages books added to the wishlist.
+- **Profile Page**: Displays user information.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation 🛠️
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Balaji242524/bookstore_app.git
+   cd bookshelf-app
+   ```
+2. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+3. Setup Firebase:
+    - Create a Firebase project.
+    - Enable Firestore Database and Authentication.
+    - Download the `google-services.json` file and place it in `android/app/`.
+4. Run the app:
+   ```sh
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Firebase Firestore Structure 🔥
+```
+Firestore Database
+|
+|-- shelfBooks (Collection)
+|   |-- {bookId} (Document)
+|       |-- title: String
+|       |-- authors: String
+|       |-- publisher: String
+|       |-- publishDate: String
+|       |-- ISBN: String
+|       |-- price: Double
+|       |-- forSale: Boolean
+|       |-- userId: String
+|       |-- timestamp: Timestamp
+|
+|-- wishlist (Collection)
+|   |-- {bookId} (Document)
+|       |-- title: String
+|       |-- authors: String
+|       |-- userId: String
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dependencies 📦
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: latest
+  firebase_auth: latest
+  cloud_firestore: latest
+```
+
+## Contributing 🤝
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License 📜
+This project is licensed under the MIT License.
+
+---
+Developed with ❤️ using Flutter & Firebase.
+
